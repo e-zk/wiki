@@ -87,7 +87,7 @@ gen_index() {
 	done
 	
 	printf '<!DOCTYPE html>\n'
-	printf '<html>\n'
+	printf '<html lang="en">\n'
 	printf '<head>\n'
 	printf "<title>wiki</title>\n"
 	cat "${html_dir}/head.html"
