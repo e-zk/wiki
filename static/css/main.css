@@ -3,7 +3,9 @@
 --bg2: #5a5b5b;
 --bg3: #2f2f2f;
 --fg: #dadbdb;
+--accent: royalblue;
 }
+/* Here's a light theme, you psycho */
 /*
 @media (prefers-color-scheme: light) {
 :root {
@@ -11,29 +13,21 @@
 --bg2: #a9a9ab;
 --bg3: #f0f0f4;
 --fg: #1a1b1b;
+--accent: blue;
 }
-}
-@media (prefers-color-scheme: dark {
-:root {
---bg: #181818;
---bg2: #5a5b5b;
---bg3: #2f2f2f;
---fg: #dadbdb;
-}
-}
-*/
+}*/
+
 
 html {
         scroll-behaviour: smooth;
         transition: 0.5s ease all;
 }
 ::selection {
-	background: #7a7b7b;
+	background: rgba(65, 105, 225,.8);
 	color: #ffffff;
 }
 body {
 	background: var(--bg);
-	/*color: #e0e0e0;*/
 	color: var(--fg);
 	padding: 0 1rem;
 	max-width: 50rem;
@@ -92,11 +86,11 @@ a, a:visited {
 	color: var(--fg);
 	font-weight: bold;
 	text-decoration: none;
-	border-bottom: 1px solid var(--bg2);
+	border-bottom: 1px solid rgba(65, 105, 225,.8);
 }
 a:hover, a:focus {
-	color: #b00050;
-	border-bottom: 1px solid #b00050;
+	color: var(--accent);
+	border-bottom: 1px solid var(--accent);
 }
 
 header,footer {
