@@ -16,10 +16,10 @@
 --accent: blue;
 }
 }*/
-html {
-        scroll-behaviour: smooth;
-	font-size: 100%
-}
+*,*::before,*::after { box-sizing: border-box }
+html,body { height: 100%; font-size: 100%; scroll-behavior: smooth }
+img,picture,video,canvas,svg { display: block; max-width: 100% }
+p,h1 h2,h3,h4,h5,h6 { overflow-wrap: break-word }
 ::selection {
 	background: var(--accent);
 	color: var(--bg);
@@ -31,7 +31,7 @@ body {
 	max-width: 50rem;
 	margin: 0 auto;
 	line-height: 1.666666;
-	font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+	font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
 }
 main {
 	padding: 1.5rem;
@@ -92,7 +92,7 @@ header,footer {
 	font-weight: bold;
 }
 code {
-	font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+	font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
 	font-size: small;
 	border: 0px dashed var(--bg2);
 	border-radius: 4px;
@@ -101,4 +101,6 @@ code {
 }
 pre code {
 	display: block;
+	overflow-y: hidden;
+	overflow-x: auto;
 }
