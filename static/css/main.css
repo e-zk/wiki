@@ -1,9 +1,9 @@
 :root {
---bg: #181818;
---bg2: #5a5b5b;
---bg3: #2f2f2f;
---fg: #dadbdb;
---accent: royalblue;
+--bg: #2b2a33;
+--bg2: #5b5a66;
+--bg3: #3b3a44;
+--fg: #ebeaff;
+--accent: lightcoral;
 }
 /* Here's a light theme, you psycho */
 /*
@@ -16,15 +16,13 @@
 --accent: blue;
 }
 }*/
-
-
 html {
         scroll-behaviour: smooth;
-        transition: 0.5s ease all;
+	font-size: 100%
 }
 ::selection {
-	background: rgba(65, 105, 225,.8);
-	color: #ffffff;
+	background: var(--accent);
+	color: var(--bg);
 }
 body {
 	background: var(--bg);
@@ -34,20 +32,16 @@ body {
 	margin: 0 auto;
 	line-height: 1.666666;
 	font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
-	font-size: 16px;
 }
-
 main {
 	padding: 1.5rem;
 	border: 1px dashed var(--bg2);
 	border-radius: 4px;
 }
-
 img {
 	max-width: 100%;
 	border-radius: 4px;
 }
-
 hr {
 	height: 0;
 	border: 0;
@@ -69,11 +63,9 @@ ul, ol {
 	margin-left: 0;
 	padding-left: 1.666666rem;
 }
-
 ul {
 	list-style-type: '  \2022  ';
 }
-
 li {
 	line-height: 1.55555;
 }
@@ -81,22 +73,19 @@ li::marker {
 	font-weight: normal;
 	color: var(--bg2);
 }
-
 a, a:visited {
 	color: var(--fg);
 	font-weight: bold;
 	text-decoration: none;
-	border-bottom: 1px solid rgba(65, 105, 225,.8);
+	border-bottom: 1px solid var(--accent);
 }
 a:hover, a:focus {
 	color: var(--accent);
 	border-bottom: 1px solid var(--accent);
 }
-
 header,footer {
 	padding: 3rem 0;
 }
-
 .info {
 	padding-top: 1.5rem;
 	text-align: right;
