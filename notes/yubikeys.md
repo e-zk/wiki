@@ -1,6 +1,6 @@
 # YubiKey notes
 
-## Generating resident ssh keys
+## generating resident ssh keys
 
 	$ ssh-keygen -t ed25519-sk -a 100 -O resident -C "yubikey-$(date '+%F')-XXXXX844"
 	Generating public/private ed25519-sk key pair.
@@ -13,7 +13,10 @@
 	Your public key has been saved in id_yubi844_sk.pub
 	The key fingerprint is: [...]
 
-I saved my identity to id_yubi844_sk just so i know which identities are for which keys.
+Where `XXXXX844` is the ID of my YubiKey (it's on the back of they key itself).  
+I saved my identity to id_yubi844_sk just so i know which identities are for which keys.  
+
+## sshd
 
 To require it for logging in via sshd, I setup sshd to require _two_ public keys. In sshd_config:
 
@@ -21,7 +24,7 @@ To require it for logging in via sshd, I setup sshd to require _two_ public keys
 
 Where one will be my yubikey, the other will be the one stored on the machine.
 
-In my personal .ssh/config:
+In my personal `.ssh/config`:
 
 	Host someserver
 		HostName 100.0.0.1

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#181818">
+<link rel="stylesheet" href="/static/css/main.css"/>
+
+<title>YubiKey notes</title>
+<meta property="og:title" content="YubiKey notes">
+</head>
+<body>
+<header>
+<nav>
+<nav>
+<a href="/"><code>wiki<sup>TM</sup></code></a>
+</nav>
+</nav>
+</header>
+<main>
+<h1 id="YubiKey%20notes">YubiKey notes</h1>
+
+<h2 id="generating%20resident%20ssh%20keys">generating resident ssh keys</h2>
+
+<pre><code>$ ssh-keygen -t ed25519-sk -a 100 -O resident -C "yubikey-$(date &#39;+%F&#39;)-XXXXX844"
+Generating public&#47;private ed25519-sk key pair.
+You may need to touch your authenticator to authorize key generation.
+Enter PIN for authenticator: 
+Enter file in which to save the key (&#47;home&#47;zzz&#47;.ssh&#47;id_ed25519_sk): id_yubi844_sk
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in id_yubi844_sk
+Your public key has been saved in id_yubi844_sk.pub
+The key fingerprint is: [...]
+</code></pre>
+
+<p>Where <code>XXXXX844</code> is the ID of my YubiKey (it&#39;s on the back of they key itself).<br/>
+I saved my identity to id<em>yubi844</em>sk just so i know which identities are for which keys.  </p>
+
+<h2 id="sshd">sshd</h2>
+
+<p>To require it for logging in via sshd, I setup sshd to require <em>two</em> public keys. In sshd_config:</p>
+
+<pre><code>AuthorizationMethods publickey,publickey
+</code></pre>
+
+<p>Where one will be my yubikey, the other will be the one stored on the machine.</p>
+
+<p>In my personal <code>.ssh&#47;config</code>:</p>
+
+<pre><code>Host someserver
+    HostName 100.0.0.1
+    IdentityFile ~&#47;.ssh&#47;id_yubi844_sk
+</code></pre>
+</main>
+<footer>
+YubiKey notes&nbsp;&sdot;&nbsp;<a href="/notes/yubikeys.md">Plaintext</a></footer>
+</body>
+</html>

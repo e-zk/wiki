@@ -1,13 +1,14 @@
 # `stat`
 
-## Get octal of file
+## get octal of file
 
-```
-	$ # bsd
-	$ stat -f "%OLp" /etc/passwd
-	644
+### bsd format
+
+	$ stat -f "%OLp %N" /etc/passwd
+	644 /etc/passwd
+
+### gnu format
 
 	$ # linux
 	$ stat -c '%A %a %n' /etc/passwd
 	-rw-r--r-- 644 /etc/passwd
-```

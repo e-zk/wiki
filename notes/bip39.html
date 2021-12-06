@@ -20,7 +20,7 @@
 <main>
 <h1 id="Notes%20on:%20BIP39%20and%20Mnumonic%20Seeds">Notes on: BIP39 and Mnumonic Seeds</h1>
 
-<p>xmrwallet and electrum don&#8217;t use BIP39 for a few reasons:</p>
+<p>xmrwallet and electrum don&#39;t use BIP39 for a few reasons:</p>
 
 <ul>
 <li><a href="https://en.bitcoin.it/wiki/Seed_phrase#BIP39_and_its_flaws">https:&#47;&#47;en.bitcoin.it&#47;wiki&#47;Seed_phrase#BIP39_and_its_flaws</a></li>
@@ -33,15 +33,14 @@
     KeySpec spec = new PBEKeySpec(NKFDchars(mnemonic), NKFDbytes("mnemonic" + passphrase), 2048, 512);
 </code></pre>
 
-<p>Java&#8217;s PBEKeySpec uses PKCS#5 (RFC2898) aka PBKDF{1,2} not sure which, I assume PBKDF2</p>
+<p>Java&#39;s PBEKeySpec uses PKCS#5 (RFC2898) aka PBKDF{1,2} not sure which, I assume PBKDF2</p>
 
 <p>(for implementing this in go this can be found in &#47;x&#47;crypto: <a href="https://pkg.go.dev/golang.org/x/crypto/pbkdf2">https:&#47;&#47;pkg.go.dev&#47;golang.org&#47;x&#47;crypto&#47;pbkdf2</a>) they use SHA512</p>
 
 <p>Electrum mnumonic generation code here: <a href="https://github.com/spesmilo/electrum/blob/3.3.8/electrum/mnemonic.py#L163">https:&#47;&#47;github.com&#47;spesmilo&#47;electrum&#47;blob&#47;3.3.8&#47;electrum&#47;mnemonic.py#L163</a>
 Seedvault uses plain BIP39: <a href="https://github.com/seedvault-app/seedvault/search?q=seed">https:&#47;&#47;github.com&#47;seedvault-app&#47;seedvault&#47;search?q=seed</a></p>
-<p class="info">BIP39 and Mnemonic Seeds</p>
 </main>
 <footer>
-<a href="./notes/bip39.md">plaintext</a>&nbsp;&nbsp;</footer>
+BIP39 and Mnemonic Seeds&nbsp;&sdot;&nbsp;<a href="/notes/bip39.md">Plaintext</a></footer>
 </body>
 </html>
